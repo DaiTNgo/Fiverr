@@ -1,0 +1,91 @@
+@use '../Abstracts/index' as *;
+.business {
+	background-color: $bgc-3;
+	&-content {
+		display: grid;
+		grid-template-columns: 4fr 6fr;
+		align-items: center;
+
+		.business-left {
+			.business-l-content {
+				padding-right: 10%;
+				@include responsive(lg) {
+					padding-right: 5%;
+				}
+				color: $color-secondary;
+				.business__title {
+					display: flex;
+					align-items: center;
+					padding-bottom: 32px;
+					@include responsive(md) {
+						padding-bottom: 24px;
+					}
+					img {
+						width: 178px;
+						height: 22px;
+					}
+				}
+				p {
+					padding-bottom: 32px;
+					max-width: 450px;
+					line-height: 1.2;
+				}
+				h6 {
+					display: flex;
+					align-items: center;
+					padding-bottom: 12px;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 1.2;
+					i {
+						width: 24px;
+						height: 24px;
+						margin-right: 10px;
+						border: 1px solid currentColor;
+						background-color: transparent;
+						color: $color-gray-200;
+						border-radius: 50%;
+						text-align: center;
+						line-height: 24px;
+						// mix-blend-mode: darken;
+						// fill: $color-gray-200;
+					}
+				}
+				button {
+					margin-top: 48px;
+					display: inline-block;
+					-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+					position: relative;
+					padding: 12px 24px;
+					border: 1px solid transparent;
+					border-radius: 4px;
+					font-weight: 600;
+					font-size: 16px;
+					line-height: 100%;
+					text-decoration: none;
+					text-align: center;
+					cursor: pointer;
+					-webkit-transition: 0.05s cubic-bezier(0.75, 0, 0.25, 1);
+					-o-transition: 0.05s cubic-bezier(0.75, 0, 0.25, 1);
+					transition: 0.05s cubic-bezier(0.75, 0, 0.25, 1);
+					background: #19a463;
+					color: #fff;
+				}
+			}
+		}
+		@include responsive(md) {
+			grid-template-columns: 1fr;
+			.business-left {
+				.business-l-content {
+					p {
+						max-width: 100%;
+					}
+				}
+			}
+            .business-right{
+                margin-top: 7rem;
+            }
+		}
+	}
+}

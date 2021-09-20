@@ -1,0 +1,51 @@
+@use '../Abstracts/index' as *;
+.btn-join {
+	@include button(
+		1.6rem,
+		$color-secondary,
+		transparent,
+		0.5rem,
+		0.5rem,
+		1.5rem,
+		$color-secondary,
+		$color-green-200,
+		currentColor
+	);
+}
+.btn-explore-started {
+	@include button(
+		1.6rem,
+		$color-secondary,
+		$color-green-100,
+		1.2rem,
+		2.4rem,
+		$color-secondary,
+		$color-green-200,
+		$color-green-100
+	);
+}
+.btn-tryLogo {
+	@include button(
+		1.6rem,
+		$color-blue-100,
+		$color-secondary,
+		1.2rem,
+		2.4rem,
+		$color-blue-100,
+		$color-gray-100,
+		$color-gray-100,
+	);
+}
+.btn-popular {
+	@include button(
+		1.4rem,
+		$color-secondary,
+		transparent,
+		100vh,
+		0.1rem,
+		1.2rem,
+		$color-primary,
+		$color-secondary,
+		currentColor
+	);
+}

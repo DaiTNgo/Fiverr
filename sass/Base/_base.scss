@@ -1,0 +1,19 @@
+@use '../Abstracts/index' as *;
+html {
+	scroll-behavior: smooth;
+	scroll-margin-top: 10px;
+	box-sizing: border-box;
+	font-size:62.5%;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+body{
+    color:$color-primary;
+    line-height: 1.5;
+	word-wrap: break-word;
+    font-size: 1.6rem ;
+	font-family: 'Roboto', sans-serif;
+}

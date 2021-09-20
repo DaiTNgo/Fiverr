@@ -1,0 +1,100 @@
+@use '../Abstracts/index' as *;
+.sub-categories {
+	.wrapper-categories {
+		overflow: hidden;
+		position: relative;
+		.categories__list {
+			display: flex;
+			margin: 0 -2rem;
+			transition: all 0.5s;
+			align-items: center;
+			.categories__item {
+				flex-shrink: 0;
+				flex-basis: flexBasis(5);
+				padding: 0 2rem;
+				transition: all 0.8s;
+				border-radius: .5rem;
+				overflow: hidden;
+				@include responsive(lg) {
+					flex-basis: flexBasis(4);
+				}
+				@include responsive(md) {
+					flex-basis: flexBasis(3);
+				}
+				@include responsive(sm) {
+					flex-basis: flexBasis(2);
+				}
+				a {
+					position: relative;
+					display: block;
+					box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px 4px;
+					@include text($color-secondary, 1.4rem, normal);
+					h4 {
+						position: absolute;
+						top: 0;
+						left: 1.2rem;
+						line-height: 1.4;
+						font-size: 2.4rem;
+						small {
+							font-size: 1.4rem;
+						}
+						@include responsive(md) {
+							font-size: 2rem;
+						}
+					}
+				}
+			}
+		}
+		@include responsive(sm) {
+			margin-left: -5px;
+			.categories__list {
+				margin: 0;
+				overflow-x: scroll;
+				scroll-snap-type: x proximity;
+				gap: 1rem;
+				scroll-padding: 48px;
+				padding-bottom: 32px;
+				-webkit-overflow-scrolling: touch;
+				.categories__item {
+					box-shadow: rgba(149, 157, 165, 0.8) 0px 8px 24px;
+					flex-basis: unset;
+					scroll-snap-align: start;
+					padding: 0;
+					margin:0 5px;
+				}
+			}
+		}
+	}
+	.wrapper-click {
+		position: relative;
+	}
+	.pre,
+	.next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		font-size: 40px;
+		border-radius: 50%;
+		background-color: $color-secondary;
+		color: $color-primary;
+		line-height: 50px;
+		opacity: 0.8;
+		transition: all 0.3s;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.pre {
+		left: -30px;
+		padding: 0 1.1rem;
+	}
+	.next {
+		right: -30px;
+		padding: 0 15px;
+	}
+}

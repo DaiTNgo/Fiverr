@@ -1,0 +1,10 @@
+@use '../Abstracts/index' as *;
+
+.search-header {
+	@include search(1.5rem, 0.8rem, 0.8rem,.3rem,$bd-color-1,$color-green-200);
+    flex-grow:1;
+	
+}
+.search-heros {
+	@include search(1.6rem, 1.2rem, 1.6rem,.4rem, transparent,$color-green-200);
+}

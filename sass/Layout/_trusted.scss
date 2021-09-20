@@ -1,0 +1,25 @@
+@use '../Abstracts/index' as *;
+.trusted {
+	background-color: $bgc-1;
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem 0;
+		.trusted-item + .trusted-item {
+			margin-left: 7rem;
+		}
+		@include responsive(lg) {
+			.trusted-item{
+				padding:0 1rem;
+			}
+			.trusted-item + .trusted-item {
+				margin-left: 0rem;
+			}
+			padding:1rem 0;
+		}
+		.trusted-by {
+			@include text($color-gray-100, 1.6rem, 600);
+		}
+	}
+}

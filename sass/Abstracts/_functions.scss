@@ -1,0 +1,11 @@
+@use 'sass:math';
+@function flexBasis($amountItem) {
+	@return math.div(100%, $amountItem);
+}
+$i:1;
+@while ($i < 5) {
+	.column-#{$i}{
+		column-count: $i !important;
+	}
+	$i: $i + 1;
+} 

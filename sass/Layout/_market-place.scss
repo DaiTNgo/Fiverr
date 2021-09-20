@@ -1,0 +1,78 @@
+@use '../Abstracts/index' as *;
+.market-place {
+	&__content {
+		.market-list {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			.market-item {
+				flex-basis: flexBasis(5);
+				flex-shrink: 0;
+				// padding-bottom: 7rem;
+				.market-link {
+					display: inline-block;
+					width: 100%;
+					position: relative;
+					color: $color-primary;
+					&:focus {
+						color: $color-primary;
+					}
+					p {
+						text-align: center;
+					}
+					img {
+						max-width: 48px;
+						width: 4.8rem;
+						height: 4.8rem;
+						margin: 0 auto;
+						margin-bottom: 1rem;
+					}
+					&::after {
+						content: '';
+						position: absolute;
+						bottom: 23%;
+						left: 50%;
+						transform: translateX(-50%);
+						width: 6rem;
+						height: 2px;
+						background-color: $color-gray-200;
+						display: block;
+						transition: all 0.2s ease-in-out;
+						margin-bottom: 0.5rem;
+					}
+					&:hover::after {
+						// color:red;
+						background-color: $color-green-100;
+						width: 8rem;
+					}
+				}
+			}
+			@media screen and(min-width:56.26em) {
+				.market-item {
+					&:nth-child(-n + 5) {
+						padding-bottom: 7rem;
+					}
+				}
+			}
+			@include responsive(md) {
+				.market-item {
+					flex-basis: flexBasis(3);
+					&:nth-child(-n + 6) {
+						padding-bottom: 7rem;
+					}
+				}
+			}
+			@include responsive(sm) {
+				.market-item {
+					flex-basis: flexBasis(2);
+					&:nth-child(-n + 8) {
+						padding-bottom: 5rem;
+					}
+					p{
+						font-size: 1.4rem;
+					}
+				}
+			}
+		}
+	}
+}

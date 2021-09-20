@@ -1,0 +1,22 @@
+{
+  "name": "Fiverr-V.2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc --out js/index.js ts/*.ts",
+    "tocss": "sass -w sass/main.scss css/index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dart-sass": "^1.25.0",
+    "sass": "^1.41.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "ts-node": "^10.2.1"
+  }
+}

@@ -1,0 +1,36 @@
+$max-width: 1400px;
+///@type color
+$color-primary: #62646a;
+$color-secondary: #fff;
+$color-green-100: #1dbf73;
+$color-green-200: #19a463;
+$color-green-300: #003912;
+$color-gray-100: #b5b6ba;
+$color-gray-200: #404145;
+$color-gray-300: #7a7d85;
+$color-blue-100: #3f63c8;
+
+///@type backgroundColor
+$bgc-primary: #fff;
+$bgc-1: #fafafa;
+$bgc-2: #f1fdf7;
+$bgc-3: #0d084d;
+$bgc-4: #f5f5f5;
+///@type color border
+$bd-color-1: #dadbdd;
+///@type font size
+$fonts: (
+	1: 48px,
+	2: 32px,
+	3: 24px,
+	4: 20px,
+	5: 18px,
+	6: 14px,
+);
+///@type padding
+$padding-1: 32px;
+$padding-2: 24px;
+$padding-3: 20px;
+$padding-4: 12px;
+$padding-5: 8px;
+$padding-6: 4px;

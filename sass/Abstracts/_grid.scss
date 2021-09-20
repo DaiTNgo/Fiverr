@@ -1,0 +1,98 @@
+@use 'sass:math';
+@use './variables' as *;
+@use './breakpoints' as *;
+@use './mixin' as *;
+.container {
+	max-width: $max-width;
+	margin: 0 auto;
+	@include responsive(xxl) {
+		//< 1760px
+		padding: 0 3.2rem;
+	}
+	@include responsive(sm) {
+		//<600px
+		padding: 0 2.4rem;
+	}
+}
+.section-p {
+	padding: 9.6rem 0;
+	@include responsive(md) {
+		//<900px
+		padding: 6.4rem 0;
+	}
+	@include responsive(sm) {
+		padding: 4.8rem 0;
+	}
+}
+.section-m {
+	margin-bottom: 9.6rem;
+	@include responsive(md) {
+		margin-bottom: 8rem;
+	}
+	@include responsive(sm) {
+		margin-bottom: 4.8rem;
+	}
+}
+$i: 1;
+@while $i <= 12 {
+	.col-#{$i} {
+		flex: 0 0 math.div(100%, math.div(12, $i));
+		width: math.div(100%, $i);
+		padding-left: 12px;
+		padding-right: 12px;
+		@include responsive(md) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		@include responsive(sm) {
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+		&.col-no {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		&.native {
+			flex: 0 0 unset;
+			scroll-snap-align: start;
+			scroll-snap-stop: end;
+		}
+	}
+
+	@each $mq, $screen in $breakpoints {
+		@include responsive($mq) {
+			.col-#{$mq}-#{$i} {
+				flex: 0 0 math.div(100%, math.div(12, $i));
+				width: math.div(100%, $i);
+			}
+		}
+	}
+	$i: $i + 1;
+}
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -12px;
+	margin-right: -12px;
+	@include responsive(md) {
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+	@include responsive(sm) {
+		margin-left: -6px;
+		margin-right: -6px;
+	}
+	&.row-no {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	&.native {
+		@include responsive(md) {
+			flex-wrap: nowrap;
+			overflow-x: scroll;
+			scroll-snap-type: mandatory;
+			scroll-padding: 48px;
+			padding-bottom: 32px;
+		}
+	}
+}

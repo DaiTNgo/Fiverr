@@ -1,0 +1,46 @@
+@use './breakpoints' as *;
+@use './mixin' as *;
+@use './variables' as *;
+
+.title-1{
+    font-size: 4.8rem;
+	font-weight: 700;
+	line-height: 4.8rem + 0.8rem;
+	padding-bottom: 4rem;
+    @include responsive(lg) {
+		font-size: 4rem;
+        line-height: 4rem + 0.8rem;
+	}
+	@include responsive(sm) {
+		font-size: 3.2rem;
+        line-height: 3.2rem + 0.8rem;
+	}
+}
+.title-2 {
+	font-size: 3.2rem;
+	font-weight: 700;
+	line-height: 3.2rem + 0.8rem;
+	padding-bottom: 2.4rem;
+	@include responsive(sm) {
+		font-size: 2.8rem;
+		padding-bottom: 2rem;
+	}
+}
+
+.new {
+	@include special-text(#ff62ad);
+}
+.beta {
+	@include special-text(#4a73e8);
+}
+.d-none {
+	display: none !important;
+}
+
+@each $screen, $size in $breakpoints {
+	.d-none-#{$screen} {
+		@include responsive($screen) {
+			display: none !important;
+		}
+	}
+}
